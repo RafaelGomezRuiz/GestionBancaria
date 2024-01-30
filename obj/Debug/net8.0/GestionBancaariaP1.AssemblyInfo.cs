@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionBancaariaP1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38fce9a6d2a38b392e21bf83e00bc5c54cce7a7b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1f3692fb9dc6cb4a2b971b636abfd4502046bdf")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionBancaariaP1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionBancaariaP1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
