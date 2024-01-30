@@ -23,6 +23,11 @@ public class BuscarJson{
         int numTarjeta=int.Parse(Console.ReadLine()!);
         return numTarjeta;
     }
+    public int PedirIdPrestamo(){
+        System.Console.WriteLine("Ingresa el numero del prestamo:");
+        int numPrestamo=int.Parse(Console.ReadLine()!);
+        return numPrestamo;
+    }
     
     // public static int BuscarUltimoNumCuenta(List<Usuario> usuarios)
     // {

@@ -10,38 +10,42 @@ public class MenuGestionarProductos
         +-+-+-+-  Gestionar productos  -+-+-+-+
         Qué operación quieres realizar?
         [1]-Crear usuario
-        [2]-Crear cuenta a un usuario
-        [3]-Eliminar cuenta a un usuario
-        [4]-Crear Tarjeta a un usuario
-        [5]-Eliminar Tarjeta a un usuario
-        [6]-Crear préstamo a un usuario
-        [7]-Eliminar préstamo a un usuario
-        [8]-Salir
+        [2]-Eliminar usuario
+        [3]-Crear cuenta a un usuario
+        [4]-Eliminar cuenta a un usuario
+        [5]-Crear Tarjeta a un usuario
+        [6]-Eliminar Tarjeta a un usuario
+        [7]-Crear préstamo a un usuario
+        [8]-Eliminar préstamo a un usuario
+        [9]-Salir
         ");
-             opcion = int.Parse(Console.ReadLine()!);
+            opcion = int.Parse(Console.ReadLine()!);
 
-            switch ((Opcion?)opcion)
+            switch ((Opcion)opcion)
             {
                 case Opcion.CrearUsuario:
                     AgregarProductos.CrearUsuario();
+                    break;
+                case Opcion.EliminarUsuario:
+                    EliminarProductos.EliminarUsuario();
                     break;
                 case Opcion.CrearCuenta:
                     AgregarProductos.CrearCuenta();
                     break;
                 case Opcion.EliminarCuenta:
-                    // Lógica para eliminar una cuenta
+                    EliminarProductos.EliminarCuenta();
                     break;
                 case Opcion.CrearTarjeta:
                     AgregarProductos.CrearTarjeta();
                     break;
                 case Opcion.EliminarTarjeta:
-                    // Lógica para eliminar una tarjeta
+                    EliminarProductos.EliminarTarjeta();
                     break;
                 case Opcion.CrearPrestamo:
                     AgregarProductos.CrearPrestamo();
                     break;
                 case Opcion.EliminarPrestamo:
-                    // Lógica para eliminar un préstamo
+                    EliminarProductos.EliminarPrestamo();
                     break;
                 case Opcion.Salir:
                     break;
@@ -55,6 +59,7 @@ public class MenuGestionarProductos
     public enum Opcion
     {
         CrearUsuario = 1,
+        EliminarUsuario,
         CrearCuenta,
         EliminarCuenta,
         CrearTarjeta,
