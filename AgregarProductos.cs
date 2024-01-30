@@ -66,28 +66,66 @@ public class AgregarProductos{
         Usuario? usuario=buscarJson.BuscarUsuario(cedula);
         if (usuario != null)
         {   
-            System.Console.WriteLine("Ingresa el numero de la cuenta: ");
-            int numCuenta=int.Parse(Console.ReadLine()!);
+            System.Console.WriteLine("Ingresa el numero de la tarjeta: ");
+            int numTarjeta=int.Parse(Console.ReadLine()!);
             
-            Console.WriteLine("Ingresa el tipo de cuenta:");
-            string? tipoCuenta = Console.ReadLine()!;
+            Console.WriteLine("Ingresa la fecha de expiracion:");
+            string? fechaExpiracion = Console.ReadLine()!;
             
-            Console.WriteLine("Ingresa el saldo inicial:");
-            double saldoInicial = double.Parse(Console.ReadLine()!);
+            Console.WriteLine("Ingresa el total de la deuda:");
+            double saldoDeuda = double.Parse(Console.ReadLine()!);
             
-            Console.WriteLine("Ingresa el PIN:");
-            int pin = int.Parse(Console.ReadLine()!);
-            
-            Cuenta cuentaNueva = new Cuenta
+            Tarjeta tarjetaNueva = new Tarjeta
             {
-                NumeroCuenta=numCuenta,
-                TipoCuenta=tipoCuenta,
-                Saldo=saldoInicial,
-                Pin=pin,
+                NumeroTarjeta=numTarjeta,
+                FechaExpiracion=fechaExpiracion,
+                SaldoDeuda=saldoDeuda,
+                EstadoTarjeta=true,
                 FechaCreacion = DateTime.Now,
-                EstadoCuenta=true,
+                
             };
-                    ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuentaNueva);
+                    ActualizarJson.ActualizarTarjetasDespuesEdicion(usuario,tarjetaNueva);
+                    System.Console.WriteLine("Tarjeta creada!");
+        }
+        else{
+            System.Console.WriteLine("No existe usuario con esa cedula");
+        }
+    }
+    public static void CrearPrestamo()
+    {
+        BuscarJson buscarJson = new BuscarJson();
+        string? cedula=buscarJson.PedirCedula();
+        Usuario? usuario=buscarJson.BuscarUsuario(cedula);
+        if (usuario != null)
+        {   
+            System.Console.WriteLine("id:");
+            int id=int.Parse(Console.ReadLine()!);
+            System.Console.WriteLine("Ingresa el monto del préstamo: ");
+        double monto = double.Parse(Console.ReadLine()!);
+
+        Console.WriteLine("Ingresa el plazo en meses:");
+        int plazoMeses = int.Parse(Console.ReadLine()!);
+
+        Console.WriteLine("Ingresa la tasa de interés:");
+        double tasaInteres = double.Parse(Console.ReadLine()!);
+
+        Console.WriteLine("Ingresa el propósito del préstamo:");
+        string? proposito = Console.ReadLine()!;
+
+        Prestamo prestamoNuevo = new Prestamo
+        {
+            Id=id,
+            Monto = monto,
+            PlazoMeses = plazoMeses,
+            TasaInteres = tasaInteres,
+            Proposito = proposito,
+            Aprobado = false,
+            FechaSolicitud = DateTime.Now,
+            FechaAprobacion = null, //Para no ponerlo null se le pone el minimo DateTime.MinValue
+        };
+
+        ActualizarJson.ActualizarPrestamosDespuesEdicion(usuario, prestamoNuevo);
+        System.Console.WriteLine("Préstamo creado!");
         }
         else{
             System.Console.WriteLine("No existe usuario con esa cedula");

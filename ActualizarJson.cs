@@ -33,4 +33,9 @@ public class ActualizarJson{
                 usuario.Productos.Tarjetas.Add(tarjeta);
                 GuardarJson.GuardarCuentaActualizada(GuardarJson.usuariosActualesJson);
         }
+        public static void ActualizarPrestamosDespuesEdicion(Usuario usuario,Prestamo prestamo) 
+        {//recuerda que esta es la cuenta del usuario logeado    
+                usuario.Productos.Prestamos.Add(prestamo);
+                GuardarJson.GuardarCuentaActualizada(GuardarJson.usuariosActualesJson);
+        }
 }

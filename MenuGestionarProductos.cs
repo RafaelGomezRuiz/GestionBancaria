@@ -32,19 +32,18 @@ public class MenuGestionarProductos
                     // Lógica para eliminar una cuenta
                     break;
                 case Opcion.CrearTarjeta:
-                    // Lógica para crear una tarjeta
+                    AgregarProductos.CrearTarjeta();
                     break;
                 case Opcion.EliminarTarjeta:
                     // Lógica para eliminar una tarjeta
                     break;
                 case Opcion.CrearPrestamo:
-                    // Lógica para crear un préstamo
+                    AgregarProductos.CrearPrestamo();
                     break;
                 case Opcion.EliminarPrestamo:
                     // Lógica para eliminar un préstamo
                     break;
                 case Opcion.Salir:
-                    // Lógica para salir del programa
                     break;
                 default:
                     System.Console.WriteLine("Opción no válida. Por favor, elige una opción correcta.");
