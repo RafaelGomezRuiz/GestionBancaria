@@ -9,10 +9,17 @@ public class GuardarJson{
         string? usuarioJsonActualizado=JsonConvert.SerializeObject(usuarios, Formatting.Indented);
         File.WriteAllText(LeerJson.rutaUsuarios,usuarioJsonActualizado);
     }
-    public static void GuardarCuentaActualizada(List<Usuario> cuentas){
+    public static void GuardarCuentaActualizada(List<Usuario> listaUsuarios){
+        if (listaUsuarios != null)
+        {
+            string? cuentaJsonActualizada=JsonConvert.SerializeObject(listaUsuarios, Formatting.Indented);
+            File.WriteAllText(LeerJson.rutaUsuarios,cuentaJsonActualizada);
         
-        string? cuentaJsonActualizada=JsonConvert.SerializeObject(cuentas, Formatting.Indented);
-        File.WriteAllText(LeerJson.rutaUsuarios,cuentaJsonActualizada);
+        }
+        else
+        {
+            System.Console.WriteLine("Error: La lista de usuarios es null al intentar guardar la cuenta actualizada.");
+        }
     }
 
 }

@@ -23,9 +23,10 @@ public class ActualizarJson{
                 GuardarJson.GuardarUsuarioActualizado(GuardarJson.usuariosActualesJson);
         }
         public static void ActualizarCuentasDespuesEdicion(Usuario usuario,Cuenta cuentaUsuario) 
-        {//recuerda que esta es la cuenta del usuario logeado    
-                usuario.Productos.Cuentas.Add(cuentaUsuario);
-                GuardarJson.GuardarCuentaActualizada(GuardarJson.usuariosActualesJson);
+        {//recuerda que esta es la cuenta del usuario logeado
+                
+                        usuario.Productos.Cuentas.Add(cuentaUsuario);
+                        GuardarJson.GuardarCuentaActualizada(GuardarJson.usuariosActualesJson);
         }
         public static void ActualizarTarjetasDespuesEdicion(Usuario usuario,Tarjeta tarjeta) 
         {//recuerda que esta es la cuenta del usuario logeado    

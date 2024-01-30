@@ -6,6 +6,10 @@ public class Usuario
     public int Telefono { get; set; }
     public Productos? Productos {get;set;}
 
+    public Usuario(){
+        Productos=new Productos();
+    }
+
     public override string ToString()
 {
     return $"Nombre: {Nombre}, Cedula: {Cedula}, Correo: {Correo}, Telefono: {Telefono}, {Productos}";

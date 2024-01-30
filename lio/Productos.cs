@@ -4,5 +4,9 @@ public class Productos{
     public List<Prestamo>? Prestamos { get; set; }
     public List<Tarjeta>? Tarjetas { get; set; }
 
-    // Tarjetas tarjetas = new Tarjetas(10000);
+    public Productos(){
+        Cuentas=new List<Cuenta>();
+        Prestamos=new List<Prestamo>();
+        Tarjetas = new List<Tarjeta>();
+    }
 }

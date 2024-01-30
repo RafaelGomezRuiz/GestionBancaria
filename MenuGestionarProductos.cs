@@ -18,7 +18,7 @@ public class MenuGestionarProductos
         [7]-Eliminar préstamo a un usuario
         [8]-Salir
         ");
-            opcion = int.Parse(Console.ReadLine()!);
+             opcion = int.Parse(Console.ReadLine()!);
 
             switch ((Opcion?)opcion)
             {

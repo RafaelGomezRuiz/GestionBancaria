@@ -31,9 +31,66 @@ public class AgregarProductos{
         string? cedula=buscarJson.PedirCedula();
         Usuario? usuario=buscarJson.BuscarUsuario(cedula);
         if (usuario != null)
-        {     
-            Cuenta cuentaNueva=new Cuenta();
-            ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuentaNueva);
+        {   
+            System.Console.WriteLine("Ingresa el numero de la cuenta: ");
+            int numCuenta=int.Parse(Console.ReadLine()!);
+            
+            Console.WriteLine("Ingresa el tipo de cuenta:");
+            string? tipoCuenta = Console.ReadLine()!;
+            
+            Console.WriteLine("Ingresa el saldo inicial:");
+            double saldoInicial = double.Parse(Console.ReadLine()!);
+            
+            Console.WriteLine("Ingresa el PIN:");
+            int pin = int.Parse(Console.ReadLine()!);
+            
+            Cuenta cuentaNueva = new Cuenta
+            {
+                NumeroCuenta=numCuenta,
+                TipoCuenta=tipoCuenta,
+                Saldo=saldoInicial,
+                Pin=pin,
+                FechaCreacion = DateTime.Now,
+                EstadoCuenta=true,
+            };
+                    ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuentaNueva);
+        }
+        else{
+            System.Console.WriteLine("No existe usuario con esa cedula");
+        }
+    }
+    public static void CrearTarjeta()
+    {
+        BuscarJson buscarJson = new BuscarJson();
+        string? cedula=buscarJson.PedirCedula();
+        Usuario? usuario=buscarJson.BuscarUsuario(cedula);
+        if (usuario != null)
+        {   
+            System.Console.WriteLine("Ingresa el numero de la cuenta: ");
+            int numCuenta=int.Parse(Console.ReadLine()!);
+            
+            Console.WriteLine("Ingresa el tipo de cuenta:");
+            string? tipoCuenta = Console.ReadLine()!;
+            
+            Console.WriteLine("Ingresa el saldo inicial:");
+            double saldoInicial = double.Parse(Console.ReadLine()!);
+            
+            Console.WriteLine("Ingresa el PIN:");
+            int pin = int.Parse(Console.ReadLine()!);
+            
+            Cuenta cuentaNueva = new Cuenta
+            {
+                NumeroCuenta=numCuenta,
+                TipoCuenta=tipoCuenta,
+                Saldo=saldoInicial,
+                Pin=pin,
+                FechaCreacion = DateTime.Now,
+                EstadoCuenta=true,
+            };
+                    ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuentaNueva);
+        }
+        else{
+            System.Console.WriteLine("No existe usuario con esa cedula");
         }
     }
 }
