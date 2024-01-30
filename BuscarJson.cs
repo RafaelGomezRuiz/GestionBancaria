@@ -9,7 +9,7 @@ public class BuscarJson{
 
 
     public  int PedirNumCuenta(){
-        System.Console.WriteLine("Ingresa el numero de cuenta:zz");
+        System.Console.WriteLine("Ingresa el numero de cuenta:");
         numCuenta=int.Parse(Console.ReadLine()!);
         return numCuenta;
     }

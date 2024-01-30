@@ -23,7 +23,7 @@ public class MenuGestionarUsuarios
             {
                 case Opcion.EditarNombre:
                     EditarUsuario.EditarNombre();
-                    opcion=7;
+                    
                     break;
                 case Opcion.EditarCorreo:
                     EditarUsuario.EditarCorreo();
@@ -41,7 +41,7 @@ public class MenuGestionarUsuarios
                     // Lógica para inhabilitar una tarjeta
                     break;
                 case Opcion.Salir:
-                    // Lógica para salir del programa
+                    
                     System.Console.WriteLine("Gracias por utilizar nuestros servicios!");
                     break;
                 default:

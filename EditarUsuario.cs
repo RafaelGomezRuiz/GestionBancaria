@@ -45,7 +45,7 @@ public class EditarUsuario{
             ActualizarJson.ActualizarUsuarioDespuesEdicion(usuario);
         }
         else{
-            System.Console.WriteLine("error");
+            System.Console.WriteLine("No existe usuario con esa cedula");
         }
     }
 
@@ -68,7 +68,7 @@ public class EditarUsuario{
         ActualizarJson.ActualizarUsuarioDespuesEdicion(usuario);
         }
         else{
-            System.Console.WriteLine("error");
+            System.Console.WriteLine("No existe usuario con esa cedula");
         }
     }
 
@@ -98,20 +98,25 @@ public class EditarUsuario{
     public static void InabilitarCuenta(){
         BuscarJson buscarJson = new BuscarJson();
         string? cedula = buscarJson.PedirCedula();
-        int numCuenta = buscarJson.PedirNumCuenta();
+        
         Usuario usuario=buscarJson.BuscarUsuario(cedula);
-        Cuenta cuenta=buscarJson.BuscarCuenta(numCuenta);
         if (usuario != null)
-        {
-        ActualizarJson.RemoverCuentasUsuariosJson(usuario,cuenta);
-        System.Console.WriteLine($"Estado actual: {cuenta.EstadoCuenta}");
-        System.Console.WriteLine("Nuevo estado de la cuenta: ");
-        bool estadoCuenta=bool.Parse(Console.ReadLine()!);
-        cuenta.EstadoCuenta=estadoCuenta;
-        ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuenta);
+        {       int numCuenta = buscarJson.PedirNumCuenta();
+                Cuenta cuenta=buscarJson.BuscarCuenta(numCuenta);
+            if(cuenta!=null){
+                ActualizarJson.RemoverCuentasUsuariosJson(usuario,cuenta);
+                System.Console.WriteLine($"Estado actual: {cuenta.EstadoCuenta}");
+                System.Console.WriteLine("Nuevo estado de la cuenta: ");
+                bool estadoCuenta=bool.Parse(Console.ReadLine()!);
+                cuenta.EstadoCuenta=estadoCuenta;
+                ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuenta);
+            }
+            else{
+                System.Console.WriteLine("No existe cuenta con ese numero");
+            }
         }
         else{
-            System.Console.WriteLine("No existe ese usuario");
+            System.Console.WriteLine("No existe usuario con esa cedula");
         }
     }
 /*
