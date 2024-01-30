@@ -112,44 +112,47 @@ public class EliminarProductos{
             Console.WriteLine("No existe usuario con esa cédula");
         }
     }
+
+
     public static void EliminarPrestamo()
     {
         BuscarJson buscarJson = new BuscarJson();
         string? cedula = buscarJson.PedirCedula();
         Usuario? usuario = buscarJson.BuscarUsuario(cedula);
 
-        if (usuario != null)
-        {
-            int idPrestamo = buscarJson.PedirIdPrestamo();
-            Prestamo? prestamo = buscarJson.BuscarPrestamo(idPrestamo);
-
-            if (prestamo != null)
-            {
-                Console.WriteLine("¿Estás seguro de que deseas eliminar este préstamo? (1.Sí / 2.No)");
-                string respuesta = Console.ReadLine();
-
-                if (respuesta == "1")
-                {
-                    ActualizarJson.RemoverPrestamosUsuariosJson(usuario, prestamo);
-                    Console.WriteLine("Préstamo eliminado exitosamente.");
-                }
-                else if (respuesta == "2")
-                {
-                    Console.WriteLine("Operación cancelada. El préstamo no fue eliminado.");
-                }
-                else
-                {
-                    Console.WriteLine("Respuesta no válida. Operación cancelada.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("No existe préstamo con ese ID");
-            }
-        }
-        else
-        {
+        //Comprobar si existe el usuario
+        if (usuario == null) {
             Console.WriteLine("No existe usuario con esa cédula");
+            return;
+        }
+
+        //Pedir Id del prestamo
+        int idPrestamo = buscarJson.PedirIdPrestamo();
+        Prestamo? prestamo = buscarJson.BuscarPrestamo(idPrestamo);
+
+        //Comprobar si tiene prestamo
+        if (prestamo == null) {
+            Console.WriteLine("No existe préstamo con ese ID");
+            return;
+        }
+
+        Console.WriteLine("¿Estás seguro de que deseas eliminar este préstamo? (1.Sí / 2.No)");
+        int respuesta = int.Parse(Console.ReadLine()!);
+
+        switch (respuesta)
+        {
+            case 1:
+            ActualizarJson.RemoverPrestamosUsuariosJson(usuario, prestamo);
+            Console.WriteLine("Préstamo eliminado exitosamente.");
+            break;
+
+            case 2:
+            Console.WriteLine("Operación cancelada. El préstamo no fue eliminado.");
+            break;
+
+            default:
+            Console.WriteLine("Respuesta no válida. Operación cancelada.");
+            break;
         }
     }
 }
