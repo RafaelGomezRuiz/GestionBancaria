@@ -15,8 +15,8 @@ public class MenuGestionarUsuarios
         [4]-Editar teléfono
         [5]-Inhabilitar cuenta
         [6]-Inhabilitar tarjeta
-        7 Aprobar prestamo
-        [7]-Salir
+        [7]-Aprobar prestamo
+        [8]-Salir
         ");
             opcion = int.Parse(Console.ReadLine()!);
 
@@ -41,6 +41,9 @@ public class MenuGestionarUsuarios
                 case Opcion.InhabilitarTarjeta:
                     EditarUsuario.InabilitarTarjeta();
                     break;
+                case Opcion.AprobarPrestamo:
+                    EditarUsuario.AprobarPrestamo();
+                    break;
                 case Opcion.Salir:
                     
                     System.Console.WriteLine("Gracias por utilizar nuestros servicios!");
@@ -60,6 +63,7 @@ public class MenuGestionarUsuarios
         EditarTelefono,
         InhabilitarCuenta,
         InhabilitarTarjeta,
+        AprobarPrestamo,
         Salir
     }
 }

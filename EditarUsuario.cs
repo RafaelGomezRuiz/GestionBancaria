@@ -144,6 +144,36 @@ public class EditarUsuario{
             System.Console.WriteLine("No existe usuario con esa cedula");
         }
     }
+
+    public static void AprobarPrestamo()
+    {
+        BuscarJson buscarJson = new BuscarJson();
+        string? cedula = buscarJson.PedirCedula();
+        Usuario? usuario = buscarJson.BuscarUsuario(cedula);
+
+        //Comprobar si existe el usuario
+        if (usuario == null) {
+            Console.WriteLine("No existe usuario con esa cédula");
+            return;
+        }
+
+        //Pedir Id del prestamo
+        int idPrestamo = buscarJson.PedirIdPrestamo();
+        Prestamo? prestamo = buscarJson.BuscarPrestamo(idPrestamo);
+
+        //Comprobar si tiene prestamo
+        if (prestamo == null) {
+            Console.WriteLine("No existe préstamo con ese ID");
+            return;
+        }
+            ActualizarJson.RemoverPrestamosUsuariosJson(usuario,prestamo);
+            System.Console.WriteLine($"Esta actual del prestamo: {prestamo.Aprobado}");
+            System.Console.WriteLine("Nuevo estado del prestamo: ");
+            bool estadoPrestamo=bool.Parse(Console.ReadLine()!);
+            prestamo.Aprobado=estadoPrestamo;
+            prestamo.FechaAprobacion=DateTime.Now;
+            ActualizarJson.ActualizarPrestamosDespuesEdicion(usuario,prestamo);
+        }
             
         
 }
