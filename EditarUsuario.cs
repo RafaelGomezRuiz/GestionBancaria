@@ -125,21 +125,19 @@ public class EditarUsuario{
     public static void InabilitarTarjeta(){
         BuscarJson buscarJson = new BuscarJson();
         string? cedula = buscarJson.PedirCedula();
-        Usuario usuario=buscarJson.BuscarUsuario(cedula);
+        Usuario? usuario=buscarJson.BuscarUsuario(cedula);
         if(usuario!=null){
-            int numCuenta = buscarJson.PedirNumCuenta();
-            Cuenta cuenta=buscarJson.BuscarCuenta(numCuenta);
-            if (cuenta !=null){
-
-            
-                ActualizarJson.RemoverCuentasUsuariosJson(usuario,cuenta);
-                System.Console.WriteLine($"Estado actual: {cuenta.EstadoCuenta}");
-                System.Console.WriteLine("Nuevo estado de la cuenta: ");
-                bool estadoCuenta=bool.Parse(Console.ReadLine()!);
-                cuenta.EstadoCuenta=estadoCuenta;
-                ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuenta);
+            int numTarjeta = buscarJson.PedirNumTarjeta();
+            Tarjeta? tarjeta=buscarJson.BuscarTarjeta(numTarjeta);
+            if (tarjeta !=null){//aqui
+                ActualizarJson.RemoverTarjetasUsuariosJson(usuario,tarjeta);
+                System.Console.WriteLine($"Estado actual: {tarjeta.EstadoTarjeta}");
+                System.Console.WriteLine("Nuevo estado de la tarjeta: ");
+                bool estadoTarjeta=bool.Parse(Console.ReadLine()!);
+                tarjeta.EstadoTarjeta=estadoTarjeta;
+                ActualizarJson.ActualizarTarjetasDespuesEdicion(usuario,tarjeta);
             }else{
-                System.Console.WriteLine("No existe cuenta con ese numero");
+                System.Console.WriteLine("No existe tarjeta con ese numero");
             }
             }
         else{

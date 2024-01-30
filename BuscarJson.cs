@@ -14,10 +14,16 @@ public class BuscarJson{
         return numCuenta;
     }
     public  string? PedirCedula(){
-        System.Console.WriteLine("Ingresa la cedula:");
+        System.Console.WriteLine("Ingresa la cedula del ususario:");
         cedula=Console.ReadLine()!;
         return cedula;
     }
+    public int PedirNumTarjeta(){
+        System.Console.WriteLine("Ingresa el numero de la tarjeta:");
+        int numTarjeta=int.Parse(Console.ReadLine()!);
+        return numTarjeta;
+    }
+    
 
     
     public  Usuario BuscarUsuario(string cedula){
@@ -49,23 +55,26 @@ public class BuscarJson{
                     return null;
                 }
         }
-    public  Tarjeta BuscarTarjeta(){
-        System.Console.WriteLine("Ingresa el numero de la tarjeta:");
-        numTarjeta=int.Parse(Console.ReadLine()!);
+    public  Tarjeta BuscarTarjeta(int numTarjeta)
+    {
         //buscar usuario que tenga cuentas y que el numero sea igual .... Tenemos que usar any para que sea booleana la respuesta ya que firstOrDefault devuelve un tipo Cuenta
         usuario=GuardarJson.usuariosActualesJson.FirstOrDefault(u=>u.Productos.Tarjetas !=null && u.Productos.Tarjetas.Any(b => b.NumeroTarjeta==numTarjeta));
         
-        if(usuario != null && usuario.Productos.Tarjetas != null){
+        if(usuario != null && usuario.Productos.Tarjetas != null)
+        {
             tarjeta=usuario.Productos.Tarjetas.FirstOrDefault(p => p.NumeroTarjeta==numTarjeta);
-            if(tarjeta!=null){  
+            if(tarjeta!=null)
+            {  
                 return tarjeta;    
-                }
-            else{
+            }
+            else
+            {
                 return null;
-                }
+            }
         }
-        else{
-                    return null;
-                }
+        else
+        {
+            return null;
         }
+    }
 }
