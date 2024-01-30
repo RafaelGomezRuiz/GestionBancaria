@@ -15,6 +15,7 @@ public class MenuGestionarUsuarios
         [4]-Editar teléfono
         [5]-Inhabilitar cuenta
         [6]-Inhabilitar tarjeta
+        7 Aprobar prestamo
         [7]-Salir
         ");
             opcion = int.Parse(Console.ReadLine()!);
