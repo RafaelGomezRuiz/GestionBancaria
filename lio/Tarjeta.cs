@@ -1,4 +1,4 @@
-public class Tarjetas{
+public class Tarjeta{
     public int autoIncrement=0;
     public int NumeroTarjeta { get; set; }
     public string? FechaExpiracion { get; set; }

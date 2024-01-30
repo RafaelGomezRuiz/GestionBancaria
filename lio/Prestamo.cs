@@ -1,4 +1,4 @@
-    public class Prestamos
+    public class Prestamo
     {
         public double Id { get; set; }
         public double Monto { get; set; }
@@ -9,7 +9,7 @@
         public DateTime FechaSolicitud { get; set; }
         public DateTime FechaAprobacion { get; set; }
 
-        public Prestamos()
+        public Prestamo()
         {
             Aprobado=false;
             FechaSolicitud = DateTime.Now;

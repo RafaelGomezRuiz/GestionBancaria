@@ -23,6 +23,7 @@ public class MenuGestionarUsuarios
             {
                 case Opcion.EditarNombre:
                     EditarUsuario.EditarNombre();
+                    opcion=7;
                     break;
                 case Opcion.EditarCorreo:
                     EditarUsuario.EditarCorreo();
