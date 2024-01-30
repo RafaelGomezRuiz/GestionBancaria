@@ -7,7 +7,7 @@ public class BuscarJson{
     public static int numTarjeta;
     public static string? cedula;
 
-
+    
     public  int PedirNumCuenta(){
         System.Console.WriteLine("Ingresa el numero de cuenta:");
         numCuenta=int.Parse(Console.ReadLine()!);
@@ -24,6 +24,14 @@ public class BuscarJson{
         return numTarjeta;
     }
     
+    // public static int BuscarUltimoNumCuenta(List<Usuario> usuarios)
+    // {
+    //     int MaxNum = usuarios.SelectMany(u => u.Productos.Cuentas)
+    //                         .Max(c => c.NumeroCuenta);
+    //     return MaxNum;
+    // } no se pudo
+    
+
 
     
     public  Usuario BuscarUsuario(string cedula){

@@ -23,10 +23,10 @@ public class MenuGestionarProductos
             switch ((Opcion?)opcion)
             {
                 case Opcion.CrearUsuario:
-                    // Lógica para crear un usuario
+                    AgregarProductos.CrearUsuario();
                     break;
                 case Opcion.CrearCuenta:
-                    // Lógica para crear una cuenta
+                    AgregarProductos.CrearCuenta();
                     break;
                 case Opcion.EliminarCuenta:
                     // Lógica para eliminar una cuenta
