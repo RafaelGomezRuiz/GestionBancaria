@@ -16,6 +16,11 @@ public class ActualizarJson{
                 usuario.Productos.Tarjetas.Remove(tarjeta);
                 GuardarJson.GuardarCuentaActualizada(GuardarJson.usuariosActualesJson);      
         }
+        public static void RemoverPrestamosUsuariosJson(Usuario usuario, Prestamo prestamo)
+        {
+                usuario.Productos.Prestamos.Remove(prestamo);
+                GuardarJson.GuardarCuentaActualizada(GuardarJson.usuariosActualesJson);      
+        }
 
         public static void ActualizarUsuarioDespuesEdicion(Usuario usuario) {//recuerda que esta es la cuenta del usuario logeado    
                 

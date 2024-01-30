@@ -8,6 +8,7 @@ public class Usuario
 
     public Usuario(){
         Productos=new Productos();
+        
     }
 
     public override string ToString()
