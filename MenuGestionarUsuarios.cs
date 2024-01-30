@@ -38,7 +38,7 @@ public class MenuGestionarUsuarios
                     EditarUsuario.InabilitarCuenta();
                     break;
                 case Opcion.InhabilitarTarjeta:
-                    // Lógica para inhabilitar una tarjeta
+                    EditarUsuario.InabilitarTarjeta();
                     break;
                 case Opcion.Salir:
                     
