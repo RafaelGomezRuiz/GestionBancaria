@@ -12,5 +12,10 @@ public class OperacionRealizada{
         operacion.ActualizarUsuario=mensaje;
         GuardarJson.GuardarHistorial(operacion);
     }
+    public static void GuardarOperacionProductos(string? mensaje){
+        Operacion operacion = Operacion.getOperacion();
+        operacion.GestionarProductos=mensaje;
+        GuardarJson.GuardarHistorial(operacion);
+    }
     
 }

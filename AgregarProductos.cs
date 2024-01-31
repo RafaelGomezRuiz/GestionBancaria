@@ -24,6 +24,7 @@ public class AgregarProductos{
 
         ActualizarJson.ActualizarUsuarioDespuesEdicion(nuevoUsuario);//debo cambiarle el nombre al metodo
         System.Console.WriteLine("Usuario ingresado al dedillo");
+        OperacionRealizada.GuardarOperacionProductos("Se creo un usuario");
     }
     public static void CrearCuenta()
     {
@@ -54,6 +55,7 @@ public class AgregarProductos{
                 EstadoCuenta=true,
             };
                     ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuentaNueva);
+                    OperacionRealizada.GuardarOperacionProductos("Se creo una cuenta");
         }
         else{
             System.Console.WriteLine("No existe usuario con esa cedula");
@@ -86,6 +88,7 @@ public class AgregarProductos{
             };
                     ActualizarJson.ActualizarTarjetasDespuesEdicion(usuario,tarjetaNueva);
                     System.Console.WriteLine("Tarjeta creada!");
+                    OperacionRealizada.GuardarOperacionProductos("Se creo una tarjeta");
         }
         else{
             System.Console.WriteLine("No existe usuario con esa cedula");
@@ -123,9 +126,9 @@ public class AgregarProductos{
             FechaSolicitud = DateTime.Now,
             FechaAprobacion = null, //Para no ponerlo null se le pone el minimo DateTime.MinValue
         };
-
-        ActualizarJson.ActualizarPrestamosDespuesEdicion(usuario, prestamoNuevo);
-        System.Console.WriteLine("Préstamo creado!");
+            ActualizarJson.ActualizarPrestamosDespuesEdicion(usuario, prestamoNuevo);
+            System.Console.WriteLine("Préstamo creado!");
+            OperacionRealizada.GuardarOperacionProductos("Se creo un prestamo");
         }
         else{
             System.Console.WriteLine("No existe usuario con esa cedula");

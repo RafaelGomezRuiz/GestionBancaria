@@ -15,6 +15,7 @@ public class EliminarProductos{
             {
                 ActualizarJson.RemoverUsuariosJson(usuario);
                 Console.WriteLine("Usuario eliminado exitosamente.");
+                OperacionRealizada.GuardarOperacionProductos("Se creo Elimino un usuario");
             }
             else if (respuesta == "2")
             {
@@ -51,6 +52,7 @@ public class EliminarProductos{
                 {
                     ActualizarJson.RemoverCuentasUsuariosJson(usuario, cuenta);
                     Console.WriteLine("Cuenta eliminada exitosamente.");
+                    OperacionRealizada.GuardarOperacionProductos("Se elimino una cuenta");
                 }
                 else if (respuesta == "2")
                 {
@@ -92,6 +94,7 @@ public class EliminarProductos{
                 {
                     ActualizarJson.RemoverTarjetasUsuariosJson(usuario, tarjeta);
                     Console.WriteLine("Tarjeta eliminada exitosamente.");
+                    OperacionRealizada.GuardarOperacionProductos("Se elimino una tarjeta");
                 }
                 else if (respuesta == "2")
                 {
@@ -144,6 +147,7 @@ public class EliminarProductos{
             case 1:
             ActualizarJson.RemoverPrestamosUsuariosJson(usuario, prestamo);
             Console.WriteLine("Préstamo eliminado exitosamente.");
+            OperacionRealizada.GuardarOperacionProductos("Se elimino un prestamo");
             break;
 
             case 2:
