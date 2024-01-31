@@ -5,7 +5,8 @@ public class LeerJson{
 
 
     public const string? rutaUsuarios=@"C:\Users\gsant\Programacionll\ATM\Main\usuarios.json";
-    
+    public const string? rutaOperaciones="operaciones.txt";
+
     public static List<Usuario> LeerUsuario(){
         if(File.Exists(rutaUsuarios)){
             string? JsonUsuario = File.ReadAllText(rutaUsuarios);
@@ -13,16 +14,19 @@ public class LeerJson{
             return  usuario;
         }
         else{
-            System.Console.WriteLine("No existe ese archivo");
-            return null;
+            
+            return new List<Usuario>();
         }
     }
     
-    
+    public static List<Operacion> LeerHistorialOperaciones(){
         
-
-    
-
+            string? JsonHistorial=File.ReadAllText(rutaOperaciones);
+            List<Operacion> operaciones=JsonConvert.DeserializeObject<List<Operacion>>(JsonHistorial);
+            return operaciones;
+       
+    }
+        
     /*public static List<Operaciones> LeerHistorialOperaciones()
     {
         if (File.Exists(GuardarJson.rutaHistorialOperaciones)){

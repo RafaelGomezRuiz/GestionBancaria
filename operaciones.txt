@@ -1,0 +1,82 @@
+[
+  {
+    "ActualizarUsuario": "Edito nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T18:30:15.7449634-04:00"
+  },
+  {
+    "ActualizarUsuario": "Edito nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T18:30:15.7449634-04:00"
+  },
+  {
+    "ActualizarUsuario": "Edito nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T18:52:37.9007534-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T19:06:28.0763559-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T19:07:56.5000919-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T19:07:56.5000919-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:08:58.6234277-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:08:58.6234277-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:08:58.6234277-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:08:58.6234277-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el correo",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:18:02.3303749-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:18:02.3303749-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el correo",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:18:02.3303749-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el nombre",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:56:36.1523437-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo el correo",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:56:36.1523437-04:00"
+  },
+  {
+    "ActualizarUsuario": "Actualizo la cedula",
+    "GestionarProductos": null,
+    "Fecha": "2024-01-30T20:56:36.1523437-04:00"
+  }
+]

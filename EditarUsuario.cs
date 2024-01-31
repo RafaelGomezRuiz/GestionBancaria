@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 
 public class EditarUsuario{
-
     
     // public int numCuenta;
     // public Usuario usuario;  no pueden ser estaticas porque almacen el valor
@@ -21,6 +20,7 @@ public class EditarUsuario{
             usuario.Nombre = nombre;
             System.Console.WriteLine("Nombre actualizado!");
             ActualizarJson.ActualizarUsuarioDespuesEdicion(usuario);
+            OperacionRealizada.GuardarOperacion("Actualizo el nombre");
         }
         else
         {
@@ -45,6 +45,7 @@ public class EditarUsuario{
 
             Console.WriteLine($"Correo actualizado!");
             ActualizarJson.ActualizarUsuarioDespuesEdicion(usuario);
+            OperacionRealizada.GuardarOperacion("Actualizo el correo");
         }
         else{
             System.Console.WriteLine("No existe usuario con esa cedula");
@@ -68,6 +69,7 @@ public class EditarUsuario{
 
         Console.WriteLine($"Cédula actualizada!");
         ActualizarJson.ActualizarUsuarioDespuesEdicion(usuario);
+        OperacionRealizada.GuardarOperacion("Actualizo la cedula");
         }
         else{
             System.Console.WriteLine("No existe usuario con esa cedula");
@@ -91,6 +93,7 @@ public class EditarUsuario{
 
         Console.WriteLine($"Teléfono actualizado!");
         ActualizarJson.ActualizarUsuarioDespuesEdicion(usuario);
+        OperacionRealizada.GuardarOperacion("Actualizo el telefono");
         }
         else{
             System.Console.WriteLine("error");
@@ -112,6 +115,7 @@ public class EditarUsuario{
                 bool estadoCuenta=bool.Parse(Console.ReadLine()!);
                 cuenta.EstadoCuenta=estadoCuenta;
                 ActualizarJson.ActualizarCuentasDespuesEdicion(usuario,cuenta);
+                OperacionRealizada.GuardarOperacion("Se inabilito la cuenta");
             }
             else{
                 System.Console.WriteLine("No existe cuenta con ese numero");
@@ -136,6 +140,7 @@ public class EditarUsuario{
                 bool estadoTarjeta=bool.Parse(Console.ReadLine()!);
                 tarjeta.EstadoTarjeta=estadoTarjeta;
                 ActualizarJson.ActualizarTarjetasDespuesEdicion(usuario,tarjeta);
+                OperacionRealizada.GuardarOperacion("Se inabilito la tarjeta");
             }else{
                 System.Console.WriteLine("No existe tarjeta con ese numero");
             }
@@ -173,6 +178,7 @@ public class EditarUsuario{
             prestamo.Aprobado=estadoPrestamo;
             prestamo.FechaAprobacion=DateTime.Now;
             ActualizarJson.ActualizarPrestamosDespuesEdicion(usuario,prestamo);
+            OperacionRealizada.GuardarOperacion("Se aprobo un prestamo");
         }
             
         
